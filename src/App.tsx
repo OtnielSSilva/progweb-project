@@ -1,35 +1,43 @@
-import "./App.css";
-import { Button } from "./components/ui/button";
-
-import Header from "./components/Header";
-import MainContainer from "./components/MainContainer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Favorites from "./pages/Favorites";
 import { Movie } from "./types/movie";
 import { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
-	const [movies, setMovies] = useState<Movie[]>([]);
+	const [favs, setFavs] = useState<Movie[]>([]);
+
 	useEffect(() => {
-		fetch("https://www.omdbapi.com/?s=Batman&page=1&apikey=22edc4ac")
-			.then((res) => res.json())
-			.then((data) => {
-				setMovies(data.Search);
-			});
+		const storedFavs = localStorage.getItem("favs");
+		if (storedFavs) {
+			setFavs(JSON.parse(storedFavs));
+		}
 	}, []);
 
-	const handleSearch = (query: string) => {
-		fetch(`https://www.omdbapi.com/?s=${query}&page=1&apikey=22edc4ac`)
-			.then((res) => res.json())
-			.then((data) => {
-				setMovies(data.Search);
-			});
+	const handleFav = (movie: Movie) => {
+		const isFavorite = favs.some((fav) => fav.imdbID === movie.imdbID);
+
+		let updatedFavs;
+		if (isFavorite) {
+			updatedFavs = favs.filter((fav) => fav.imdbID !== movie.imdbID);
+		} else {
+			updatedFavs = [...favs, movie];
+		}
+		setFavs(updatedFavs);
+		localStorage.setItem("favs", JSON.stringify(updatedFavs));
 	};
 
 	return (
-		<>
-			<Header onSearch={handleSearch} />
-			<MainContainer movies={movies} />
-			<Button>Click me</Button>
-		</>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Home handleFav={handleFav} favs={favs} />} />
+				<Route
+					path="/favorites"
+					element={<Favorites handleFav={handleFav} favs={favs} />}
+				/>
+			</Routes>
+		</BrowserRouter>
 	);
 }
 

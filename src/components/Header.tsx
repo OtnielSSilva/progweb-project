@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 interface HeaderProps {
 	onSearch?: (query: string) => void;
 	onProfileClick?: () => void;
@@ -20,10 +20,10 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onProfileClick }) => {
 	return (
 		<header className="bg-gray-800 text-white p-4 flex justify-between items-center md:flex-row flex-col">
 			<div className="text-2xl font-semibold">
-				{/* Your logo or app name here */}
-				Cinephile's <span className="text-blue-500">Picks</span>
+				<Link to="/">
+					Cinephile's <span className="text-blue-500">Picks</span>
+				</Link>
 			</div>
-			{/* Search input and button */}
 			<div className="flex mt-4 md:mt-0 w-full md:w-auto items-center">
 				<input
 					type="text"
@@ -37,12 +37,10 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onProfileClick }) => {
 					onClick={handleSearchSubmit}
 					className="bg-blue-500 hover:bg-blue-700 text-white rounded-r py-2 px-4"
 				>
-					{/* Add a search icon here (optional) */}
 					Search
 				</button>
 			</div>
 
-			{/* Hidden on smaller screens */}
 			<nav className="md:space-x-4 md:flex hidden">
 				<a href="/" className="hover:text-gray-300">
 					Home
@@ -56,8 +54,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onProfileClick }) => {
 			</nav>
 			<div className="md:block hidden">
 				<button onClick={onProfileClick} className="hover:text-gray-300">
-					{/* Profile icon here */}
-					Profile
+					<Link to="/favorites">Favorites</Link>
 				</button>
 			</div>
 		</header>
