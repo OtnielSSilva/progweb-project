@@ -46,6 +46,9 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onProfileClick }) => {
 					Home
 				</a>
 				<a href="/movies" className="hover:text-gray-300">
+					Genre
+				</a>
+				<a href="/movies" className="hover:text-gray-300">
 					Movies
 				</a>
 				<a href="/tv-shows" className="hover:text-gray-300">

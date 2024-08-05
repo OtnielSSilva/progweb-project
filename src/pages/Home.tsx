@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import MainContainer from "@/components/MainContainer";
 import { Movie } from "@/types/movie";
 import { useEffect, useState } from "react";
-
+import { MyCarousel } from "@/components/MyCarousel";
 interface HomeProps {
 	handleFav: (movie: Movie) => void;
 	favs: Movie[];
@@ -37,6 +37,7 @@ export default function Home({ handleFav, favs }: HomeProps) {
 	return (
 		<>
 			<Header onSearch={handleSearch} />
+			<MyCarousel />
 			<MainContainer movies={movies} handleFav={handleFav} favs={favs} />
 		</>
 	);

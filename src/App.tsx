@@ -1,8 +1,9 @@
+import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
+import MovieDetails from "./pages/MovieDetails";
 import { Movie } from "./types/movie";
-import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
 					path="/favorites"
 					element={<Favorites handleFav={handleFav} favs={favs} />}
 				/>
+				<Route path="/movie/:imdbID" element={<MovieDetails />} />
 			</Routes>
 		</BrowserRouter>
 	);
