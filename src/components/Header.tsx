@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onProfileClick }) => {
 		<header className="bg-gray-800 text-white p-4 flex justify-between items-center">
 			<div className="text-2xl font-semibold">
 				{/* Your logo or app name here */}
-				FaveFlix
+				Cinephile's <span className="text-blue-500">Picks</span>
 			</div>
 
 			<nav className="space-x-4">
@@ -42,6 +42,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onProfileClick }) => {
 					placeholder="Search..."
 					value={searchQuery}
 					onChange={handleSearchChange}
+					onKeyDown={(e) => e.key === "Enter" && handleSearchSubmit()}
 					className="bg-gray-700 rounded-l py-2 px-4 focus:outline-none focus:bg-gray-600"
 				/>
 				<button

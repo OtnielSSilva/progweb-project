@@ -1,13 +1,9 @@
 import React from "react";
 import MovieCard from "./MovieCard";
+import { Movie } from "../types/movie";
 
 interface MainContainerProps {
-	movies: {
-		title: string;
-		posterPath: string;
-		overview: string;
-		// ...other movie properties
-	}[]; // Array of movie objects
+	movies: Movie[];
 }
 
 const MainContainer: React.FC<MainContainerProps> = ({ movies }) => {
@@ -16,7 +12,7 @@ const MainContainer: React.FC<MainContainerProps> = ({ movies }) => {
 			<h2 className="text-white text-2xl font-semibold mb-4">My Movies</h2>
 			<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
 				{movies.map((movie) => (
-					<MovieCard key={movie.title} movie={movie} /> // Key is important for React lists
+					<MovieCard key={movie.Title} movie={movie} /> // Key is important for React lists
 				))}
 			</div>
 		</div>
