@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 interface HeaderProps {
 	onSearch?: (query: string) => void;
-	onProfileClick?: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onSearch, onProfileClick }) => {
+const Header: React.FC<HeaderProps> = ({ onSearch }) => {
 	const [searchQuery, setSearchQuery] = useState("");
 
 	const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onProfileClick }) => {
 				</a>
 			</nav>
 			<div className="md:block hidden">
-				<button onClick={onProfileClick} className="hover:text-gray-300">
+				<button className="hover:text-gray-300">
 					<Link to="/favorites">Favorites</Link>
 				</button>
 			</div>

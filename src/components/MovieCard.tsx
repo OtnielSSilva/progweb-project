@@ -16,13 +16,14 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie, favs, handleFav }) => {
 
 	return (
 		<div
-			className="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg cursor-pointer relative"
+			className="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg cursor-pointer relative w-64"
 			onClick={() => navigate(`/movie/${movie.imdbID}`)}
 		>
 			<img
 				src={movie.Poster}
 				alt={`${movie.Title} poster`}
-				className="w-full h-64 object-cover"
+				className="w-full object-cover"
+				// h-64
 			/>
 			<div className="p-4">
 				{/* Title with tooltip */}
