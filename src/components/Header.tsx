@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function NavbarMobile() {
+interface HeaderProps {
+	handleHomeClick?: () => void;
+}
+
+function Header({ handleHomeClick }: HeaderProps) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	const toggleMenu = () => {
@@ -12,7 +16,7 @@ function NavbarMobile() {
 		<nav className="bg-gray-800 border-gray-700">
 			<div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 				<span className="self-center text-xl sm:text-xl md:text-2xl lg:text-2xl font-semibold whitespace-nowrap text-white">
-					<Link to="/">
+					<Link to="/" onClickCapture={handleHomeClick}>
 						Cinephile's <span className="text-blue-500">Picks</span>
 					</Link>
 				</span>
@@ -52,6 +56,7 @@ function NavbarMobile() {
 								to="/"
 								className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0"
 								aria-current="page"
+								onClickCapture={handleHomeClick}
 							>
 								Home
 							</Link>
@@ -95,4 +100,4 @@ function NavbarMobile() {
 	);
 }
 
-export default NavbarMobile;
+export default Header;

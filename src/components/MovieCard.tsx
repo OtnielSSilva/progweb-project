@@ -22,7 +22,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie, favs, handleFav }) => {
 			<img
 				src={movie.Poster}
 				alt={`${movie.Title} poster`}
-				className="w-full object-cover"
+				className="w-full object-cover max-h-80"
 				// h-64
 			/>
 			<div className="p-4">
