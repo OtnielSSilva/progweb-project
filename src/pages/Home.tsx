@@ -1,8 +1,8 @@
+import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import MainContainer from "@/components/MainContainer";
 import { Movie } from "@/types/movie";
-import { useEffect, useState } from "react";
-import { MyCarousel } from "@/components/MyCarousel";
+
 interface HomeProps {
 	handleFav: (movie: Movie) => void;
 	favs: Movie[];
@@ -30,14 +30,13 @@ export default function Home({ handleFav, favs }: HomeProps) {
 			.catch((error) => console.error("Error fetching movies:", error));
 	};
 
-	const handleSearch = (query: string) => {
-		fetchMovies(query);
-	};
+	// const handleSearch = (query: string) => {
+	// 	fetchMovies(query);
+	// };
 
 	return (
 		<>
-			<Header onSearch={handleSearch} />
-			<MyCarousel />
+			<Header />
 			<MainContainer movies={movies} handleFav={handleFav} favs={favs} />
 		</>
 	);
