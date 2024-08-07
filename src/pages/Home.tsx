@@ -46,7 +46,9 @@ export default function Home({ handleFav, favs }: HomeProps) {
 			<div className="p-4">
 				{movies.length === 0 ? (
 					<div className="text-center text-gray-400">
-						<h2 className="text-xl mb-4">Explore Popular Films and TV Shows</h2>
+						<h2 className="text-xl mb-4 md:text-2xl">
+							Explore Popular Films and TV Shows
+						</h2>
 						<p>
 							Use the search box above to find your favorite films or browse
 							featured content.
