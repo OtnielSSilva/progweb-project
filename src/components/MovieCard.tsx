@@ -26,14 +26,15 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie, favs, handleFav }) => {
 				// h-64
 			/>
 			<div className="p-4">
-				{/* Title with tooltip */}
 				<h3
-					className="text-white text-lg font-semibold mb-2 truncate"
+					className="text-white text-base sm:text-base md:text-lg lg:text-xl xl:text-xl font-semibold mb-2 truncate"
 					title={movie.Title}
 				>
 					{movie.Title}
 				</h3>
-				<p className="text-gray-400 text-sm line-clamp-3">{movie.Year}</p>
+				<p className="text-gray-400 text-xs sm:text-sm md:text-base line-clamp-3">
+					{movie.Year}
+				</p>
 			</div>
 
 			<div
@@ -43,7 +44,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie, favs, handleFav }) => {
 					handleFav(movie);
 				}}
 			>
-				<IconContext.Provider value={{ size: "1.7em", color: "red" }}>
+				<IconContext.Provider value={{ size: "1.5em", color: "red" }}>
 					{isFavorite ? <IoHeartSharp /> : <IoHeartOutline />}
 				</IconContext.Provider>
 			</div>
