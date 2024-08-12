@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Movie } from "../types/movie";
 import { IoHeartSharp, IoHeartOutline } from "react-icons/io5";
@@ -10,7 +9,7 @@ interface MovieCardProps {
 	handleFav: (movie: Movie) => void;
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({ movie, favs, handleFav }) => {
+const MovieCard = ({ movie, favs, handleFav }: MovieCardProps): JSX.Element => {
 	const navigate = useNavigate();
 	const isFavorite = favs.some((fav) => fav.imdbID === movie.imdbID);
 

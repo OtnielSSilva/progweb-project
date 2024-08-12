@@ -1,4 +1,3 @@
-import React from "react";
 import MovieCard from "./MovieCard";
 import { Movie } from "../types/movie";
 
@@ -8,15 +7,15 @@ interface MainContainerProps {
 	favs: Movie[];
 }
 
-const MainContainer: React.FC<MainContainerProps> = ({
+function MainContainer({
 	movies,
 	handleFav,
 	favs,
-}) => {
+}: MainContainerProps): JSX.Element {
 	return (
 		<div className="container mx-auto p-4">
 			<div className="flex flex-wrap gap-4 justify-center">
-				{movies.map((movie) => (
+				{movies.map((movie: Movie) => (
 					<MovieCard
 						key={movie.imdbID}
 						movie={movie}
@@ -27,6 +26,6 @@ const MainContainer: React.FC<MainContainerProps> = ({
 			</div>
 		</div>
 	);
-};
+}
 
 export default MainContainer;

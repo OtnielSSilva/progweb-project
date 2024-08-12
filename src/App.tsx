@@ -6,7 +6,6 @@ import MovieDetails from "./pages/MovieDetails";
 import { Movie } from "./types/movie";
 import Header from "./components/Header"; // Adjust the path as needed
 import Footer from "./components/Footer"; // Adjust the path as needed
-import "./App.css";
 
 function App() {
 	const [favs, setFavs] = useState<Movie[]>([]);

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Movie } from "../types/movie";
 
-const MovieDetails: React.FC = () => {
+const MovieDetails = () => {
 	const { imdbID } = useParams<{ imdbID: string }>();
 	const [movie, setMovie] = useState<Movie | null>(null);
 
