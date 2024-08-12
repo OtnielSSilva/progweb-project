@@ -67,7 +67,7 @@ function Header({ handleHomeClick }: HeaderProps) {
 								onClickCapture={handleHomeClick}
 							>
 								<FaHome size={24} />
-								<span className="ml-2">Home</span>
+								<span className="ml-2">Início</span>
 							</Link>
 						</li>
 						<li>
@@ -80,7 +80,7 @@ function Header({ handleHomeClick }: HeaderProps) {
 								}`}
 							>
 								<MdFavorite size={24} />
-								<span className="ml-2">Favorites</span>
+								<span className="ml-2">Favoritos</span>
 							</Link>
 						</li>
 					</ul>

@@ -12,8 +12,8 @@ export default function Favorites({ handleFav, favs }: FavoritesProps) {
 			<h2 className="text-white text-2xl font-semibold mb-4">My Favorites</h2>
 			{favs.length === 0 ? (
 				<p className="text-gray-400 text-center text-lg font-medium mt-8">
-					You don't have any favorites yet. Add some movies to your favorites
-					list!
+					Você ainda não tem nenhum favorito. Adicione alguns filmes à sua lista
+					de favoritos!
 				</p>
 			) : (
 				<div className="flex flex-wrap gap-4">

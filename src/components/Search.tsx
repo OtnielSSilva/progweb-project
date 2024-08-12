@@ -22,7 +22,7 @@ function Search({ onSearch }: SearchProps) {
 			<div className="bg-gray-800 border border-gray-700 rounded-lg p-2 max-w-lg w-full flex items-center">
 				<input
 					type="text"
-					placeholder="Search for your favorite films..."
+					placeholder="Pesquise pelos seus filmes favoritos..."
 					value={searchQuery}
 					onChange={handleSearchChange}
 					onKeyDown={(e) => e.key === "Enter" && handleSearchSubmit()}

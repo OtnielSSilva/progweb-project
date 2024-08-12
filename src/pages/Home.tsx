@@ -42,11 +42,11 @@ export default function Home({ handleFav, favs }: HomeProps) {
 					{movies.length === 0 ? (
 						<div className="text-center text-gray-400">
 							<h2 className="text-xl mb-4 md:text-2xl">
-								Explore Popular Films and TV Shows
+								Explore Filmes e Séries Populares
 							</h2>
 							<p>
-								Use the search box above to find your favorite films or browse
-								featured content.
+								Use a barra de pesquisa acima para encontrar seus filmes
+								favoritos.
 							</p>
 						</div>
 					) : (

@@ -35,17 +35,17 @@ const MovieDetails = () => {
 				<div className="p-6">
 					<h2 className="text-white text-3xl font-bold mb-4">{movie.Title}</h2>
 					<p className="text-gray-400 text-lg mb-4">{movie.Plot}</p>
-					<p className="text-gray-300 text-md mb-2">Genre: {movie.Genre}</p>
-					<p className="text-gray-300 text-md mb-2">Runtime: {movie.Runtime}</p>
+					<p className="text-gray-300 text-md mb-2">Gênero: {movie.Genre}</p>
+					<p className="text-gray-300 text-md mb-2">Duração: {movie.Runtime}</p>
 					<p className="text-gray-300 text-md mb-2">
-						Released: {movie.Released}
+						Lançamento: {movie.Released}
 					</p>
 					<p className="text-gray-300 text-md mb-2">
-						Directed by: {movie.Director}
+						Direção: {movie.Director}
 					</p>
-					<p className="text-gray-300 text-md mb-2">Starring: {movie.Actors}</p>
+					<p className="text-gray-300 text-md mb-2">Elenco: {movie.Actors}</p>
 					<p className="text-yellow-400 text-md">
-						IMDB Rating: {movie.imdbRating}
+						Classificação no IMDB: {movie.imdbRating}
 					</p>
 				</div>
 			</div>
