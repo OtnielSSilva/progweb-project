@@ -34,26 +34,24 @@ export default function Home({ handleFav, favs }: HomeProps) {
 	};
 
 	return (
-		<div className="flex flex-col">
-			<main className="flex-grow">
-				<MyCarousel />
-				<Search onSearch={handleSearch} />
-				<div className="p-4">
-					{movies.length === 0 ? (
-						<div className="text-center text-gray-400">
-							<h2 className="text-xl mb-4 md:text-2xl">
-								Explore Filmes e Séries Populares
-							</h2>
-							<p>
-								Use a barra de pesquisa acima para encontrar seus filmes
-								favoritos.
-							</p>
-						</div>
-					) : (
-						<MainContainer movies={movies} handleFav={handleFav} favs={favs} />
-					)}
-				</div>
-			</main>
-		</div>
+		<main className="flex-grow">
+			<MyCarousel />
+			<Search onSearch={handleSearch} />
+			<div className="p-4">
+				{movies.length === 0 ? (
+					<div className="text-center text-gray-400">
+						<h2 className="text-xl mb-4 md:text-2xl">
+							Explore Filmes e Séries Populares
+						</h2>
+						<p>
+							Use a caixa de pesquisa acima para encontrar seus filmes favoritos
+							ou navegue pelo conteúdo em destaque.
+						</p>
+					</div>
+				) : (
+					<MainContainer movies={movies} handleFav={handleFav} favs={favs} />
+				)}
+			</div>
+		</main>
 	);
 }

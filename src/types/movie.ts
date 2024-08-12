@@ -31,10 +31,4 @@ interface Movie {
 	Response: string;
 }
 
-interface MovieSearch {
-	Search: Movie[];
-	totalResults: string;
-	Response: string;
-}
-
-export type { Movie, MovieSearch };
+export type { Movie };

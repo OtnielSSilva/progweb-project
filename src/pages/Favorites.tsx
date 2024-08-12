@@ -16,7 +16,7 @@ export default function Favorites({ handleFav, favs }: FavoritesProps) {
 					de favoritos!
 				</p>
 			) : (
-				<div className="flex flex-wrap gap-4">
+				<div className="flex flex-wrap gap-4 justify-center sm:justify-center md:justify-start">
 					{favs.map((movie: Movie) => (
 						<MovieCard
 							key={movie.imdbID}
