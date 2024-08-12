@@ -47,7 +47,6 @@ const MovieDetails: React.FC = () => {
 					<p className="text-yellow-400 text-md">
 						IMDB Rating: {movie.imdbRating}
 					</p>
-					{/* Add more movie details as needed */}
 				</div>
 			</div>
 		</div>

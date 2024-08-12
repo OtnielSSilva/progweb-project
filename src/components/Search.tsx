@@ -18,7 +18,7 @@ function Search({ onSearch }: SearchProps) {
 	};
 
 	return (
-		<div className="flex justify-center items-center px-4">
+		<div className="flex justify-center items-center px-4 mt-6">
 			<div className="bg-gray-800 border border-gray-700 rounded-lg p-2 max-w-lg w-full flex items-center">
 				<input
 					type="text"
@@ -30,9 +30,9 @@ function Search({ onSearch }: SearchProps) {
 				/>
 				<button
 					onClick={handleSearchSubmit}
-					className="bg-blue-600 hover:bg-blue-700 text-white rounded-r py-2 px-6 text-sm"
+					className="bg-blue-600 hover:bg-blue-700 text-white rounded-r py-2 px-6"
 				>
-					<CiSearch />
+					<CiSearch size={24} />
 				</button>
 			</div>
 		</div>
