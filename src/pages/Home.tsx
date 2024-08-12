@@ -1,12 +1,8 @@
-import { useEffect, useState } from "react";
-import Header from "@/components/Header";
+import { useState } from "react";
 import MainContainer from "@/components/MainContainer";
 import { Movie } from "@/types/movie";
 import Search from "@/components/Search";
-import Footer from "@/components/footer/Footer";
-
-
-
+import { MyCarousel } from "@/components/MyCarousel";
 
 interface HomeProps {
 	handleFav: (movie: Movie) => void;
@@ -15,8 +11,6 @@ interface HomeProps {
 
 export default function Home({ handleFav, favs }: HomeProps) {
 	const [movies, setMovies] = useState<Movie[]>([]);
-
-	useEffect(() => {}, []);
 
 	const fetchMovies = (query: string) => {
 		fetch(
@@ -39,31 +33,27 @@ export default function Home({ handleFav, favs }: HomeProps) {
 		fetchMovies(query);
 	};
 
-	const handleHomeClick = () => {
-		setMovies([]);
-	};
-
 	return (
-		<div className="min-h-screen">
-			<Header handleHomeClick={handleHomeClick} />
-			<Search onSearch={handleSearch} />
-			<div className="p-4">
-				{movies.length === 0 ? (
-					<div className="text-center text-gray-400">
-						<h2 className="text-xl mb-4 md:text-2xl">
-							Explore Popular Films and TV Shows
-						</h2>
-						<p>
-							Use the search box above to find your favorite films or browse
-							featured content.
-						</p>
-						{/* Placeholder or featured films could be added here */}
-					</div>
-				) : (
-					<MainContainer movies={movies} handleFav={handleFav} favs={favs} />
-				)}
-			</div>
-		  	<Footer /> {/* Adicione o Footer aqui */}
+		<div className="flex flex-col">
+			<main className="flex-grow">
+				<MyCarousel />
+				<Search onSearch={handleSearch} />
+				<div className="p-4">
+					{movies.length === 0 ? (
+						<div className="text-center text-gray-400">
+							<h2 className="text-xl mb-4 md:text-2xl">
+								Explore Popular Films and TV Shows
+							</h2>
+							<p>
+								Use the search box above to find your favorite films or browse
+								featured content.
+							</p>
+						</div>
+					) : (
+						<MainContainer movies={movies} handleFav={handleFav} favs={favs} />
+					)}
+				</div>
+			</main>
 		</div>
 	);
 }

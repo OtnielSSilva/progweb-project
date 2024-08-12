@@ -1,14 +1,16 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { FaHome } from "react-icons/fa"; // Importando o ícone
-import { MdFavorite } from "react-icons/md"; //
-import { FaArrowAltCircleDown } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
+import { FaHome } from "react-icons/fa";
+import { MdFavorite } from "react-icons/md";
+
 interface HeaderProps {
 	handleHomeClick?: () => void;
 }
 
 function Header({ handleHomeClick }: HeaderProps) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const location = useLocation();
+	const currentPath = location.pathname;
 
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
@@ -56,44 +58,29 @@ function Header({ handleHomeClick }: HeaderProps) {
 						<li>
 							<Link
 								to="/"
-								className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0"
-								aria-current="page"
+								className={`flex items-center py-2 px-3 rounded md:p-0 ${
+									currentPath === "/"
+										? "text-white bg-blue-700 md:bg-transparent md:text-blue-700"
+										: "text-gray-400 hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700"
+								}`}
+								aria-current={currentPath === "/" ? "page" : undefined}
 								onClickCapture={handleHomeClick}
 							>
 								<FaHome size={24} />
+								<span className="ml-2">Home</span>
 							</Link>
-						</li>
-						<li>
-							<a
-								href="#"
-								className="block py-2 px-3 text-gray-400 rounded hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-							>
-								Example
-							</a>
-						</li>
-						<li>
-							<a
-								href="#"
-								className="block py-2 px-3 text-gray-400 rounded hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-							>
-								<FaArrowAltCircleDown />
-							</a>
-						</li>
-						<li>
-							<a
-								href="#"
-								className="block py-2 px-3 text-gray-400 rounded hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-							>
-								Example
-							</a>
 						</li>
 						<li>
 							<Link
 								to="/favorites"
-								className="block py-2 px-3 text-gray-400 rounded hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+								className={`flex items-center py-2 px-3 rounded md:p-0 ${
+									currentPath === "/favorites"
+										? "text-white bg-blue-700 md:bg-transparent md:text-blue-700"
+										: "text-gray-400 hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700"
+								}`}
 							>
-								<MdFavorite />
-
+								<MdFavorite size={24} />
+								<span className="ml-2">Favorites</span>
 							</Link>
 						</li>
 					</ul>
