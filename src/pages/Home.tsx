@@ -3,6 +3,10 @@ import Header from "@/components/Header";
 import MainContainer from "@/components/MainContainer";
 import { Movie } from "@/types/movie";
 import Search from "@/components/Search";
+import Footer from "@/components/footer/Footer";
+
+
+
 
 interface HomeProps {
 	handleFav: (movie: Movie) => void;
@@ -59,6 +63,7 @@ export default function Home({ handleFav, favs }: HomeProps) {
 					<MainContainer movies={movies} handleFav={handleFav} favs={favs} />
 				)}
 			</div>
+		  	<Footer /> {/* Adicione o Footer aqui */}
 		</div>
 	);
 }

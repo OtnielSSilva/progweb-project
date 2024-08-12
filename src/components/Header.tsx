@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { FaHome } from "react-icons/fa"; // Importando o ícone
+import { MdFavorite } from "react-icons/md"; //
+import { FaArrowAltCircleDown } from "react-icons/fa";
 interface HeaderProps {
 	handleHomeClick?: () => void;
 }
@@ -58,7 +60,7 @@ function Header({ handleHomeClick }: HeaderProps) {
 								aria-current="page"
 								onClickCapture={handleHomeClick}
 							>
-								Home
+								<FaHome size={24} />
 							</Link>
 						</li>
 						<li>
@@ -74,7 +76,7 @@ function Header({ handleHomeClick }: HeaderProps) {
 								href="#"
 								className="block py-2 px-3 text-gray-400 rounded hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
 							>
-								Example
+								<FaArrowAltCircleDown />
 							</a>
 						</li>
 						<li>
@@ -90,7 +92,8 @@ function Header({ handleHomeClick }: HeaderProps) {
 								to="/favorites"
 								className="block py-2 px-3 text-gray-400 rounded hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
 							>
-								Favorites
+								<MdFavorite />
+
 							</Link>
 						</li>
 					</ul>

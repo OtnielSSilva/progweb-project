@@ -31,14 +31,17 @@ function App() {
 
 	return (
 		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Home handleFav={handleFav} favs={favs} />} />
-				<Route
-					path="/favorites"
-					element={<Favorites handleFav={handleFav} favs={favs} />}
-				/>
-				<Route path="/movie/:imdbID" element={<MovieDetails />} />
-			</Routes>
+			<div className="flex flex-col min-h-screen">
+				<Routes>
+					<Route path="/" element={<Home handleFav={handleFav} favs={favs} />} />
+					<Route
+						path="/favorites"
+						element={<Favorites handleFav={handleFav} favs={favs} />}
+					/>
+					<Route path="/movie/:imdbID" element={<MovieDetails />} />
+				</Routes>
+				
+			</div>
 		</BrowserRouter>
 	);
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CiSearch } from "react-icons/ci";
 
 interface SearchProps {
 	onSearch?: (query: string) => void;
@@ -31,7 +32,7 @@ function Search({ onSearch }: SearchProps) {
 					onClick={handleSearchSubmit}
 					className="bg-blue-600 hover:bg-blue-700 text-white rounded-r py-2 px-6 text-sm"
 				>
-					Search
+					<CiSearch />
 				</button>
 			</div>
 		</div>
